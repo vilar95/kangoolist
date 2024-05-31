@@ -255,7 +255,7 @@ showProductAddEditProductModal({
 
                           // Salvar
                           if (product == null) {
-                            productBoxHandler.insertProduct(produto);
+                            productBoxHandler.addProduct(produto);
                           } else {
                             productBoxHandler.updateProduct(product);
                           }

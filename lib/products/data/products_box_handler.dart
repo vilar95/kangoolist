@@ -12,7 +12,7 @@ class ProductsBoxHandler {
     await _box.close();
   }
 
-  Future<int> insertProduct(Product product) async {
+  Future<int> addProduct(Product product) async {
     return _box.add(product);
   }
 

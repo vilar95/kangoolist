@@ -7,14 +7,14 @@ class KangooListTheme {
     useMaterial3: true,
 
     // Paleta de cores principal
-    primarySwatch: KangooListColors.purple,
+    primarySwatch: Colors.teal,
 
     // Cor de fundo em telas que usam Scaffold
-    scaffoldBackgroundColor: const Color.fromARGB(255, 162, 126, 255),
+    scaffoldBackgroundColor: Color.fromARGB(255, 126, 255, 218),
 
     // Tema dos FloatingActionButton
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: KangooListColors.lavandalight,
+      backgroundColor: Color.fromARGB(255, 221, 255, 243),
     ),
 
     // Temas dos ListTiles

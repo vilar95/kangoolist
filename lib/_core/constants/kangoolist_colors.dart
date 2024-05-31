@@ -14,7 +14,7 @@ class KangooListColors {
     800: Color(0xFFB9DB47),
     900: Color(0xFFADD535),
   });
-  static const int _greenPrimaryValue = 0xFFCCE663;
+  static const int _greenPrimaryValue = 0xFFCCE63;
 
   static const MaterialColor greenAccent =
       MaterialColor(_greenAccentValue, <int, Color>{

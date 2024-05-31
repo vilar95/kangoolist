@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kangoolist/_core/services/dio_service.dart';
 import 'package:flutter_kangoolist/authentication/models/mock_user.dart';
 import 'package:flutter_kangoolist/kangoolists/data/database.dart';
 import 'package:flutter_kangoolist/kangoolists/screens/widgets/home_drawer.dart';
@@ -19,6 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
   List<KangooList> kangooLists = [];
   late AppDatabase _appDatabase;
 
+  DioService _dioService = DioService();
+
   @override
   void initState() {
     _appDatabase = AppDatabase();
@@ -36,9 +39,56 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: HomeDrawer(user: widget.user),
-      appBar: AppBar(
-        title: const Text("Minhas listas"),
-      ),
+      appBar: AppBar(title: const Text("Minhas listas"), actions: [
+        PopupMenuButton(
+          icon: const Icon(Icons.cloud_outlined),
+          onSelected: (value) {
+            if (value == "SAVE") {
+              saveOnServer();
+            }
+            if (value == "SYNC") {
+              syncWithServer();
+            }
+            if (value == "CLEAR") {
+              clearServerData();
+            }
+          },
+          itemBuilder: (context) {
+            return [
+              const PopupMenuItem(
+                value: "SAVE",
+                child: ListTile(
+                  leading: Icon(
+                    Icons.cloud_upload_outlined,
+                    size: 36,
+                  ),
+                  title: Text(
+                    "Salvar na nuvem",
+                  ),
+                ),
+              ),
+              const PopupMenuItem(
+                value: "SYNC",
+                child: ListTile(
+                  leading: Icon(Icons.cloud_download_outlined, size: 36),
+                  title: Text(
+                    "Sincronização da nuvem",
+                  ),
+                ),
+              ),
+              const PopupMenuItem(
+                value: "CLEAR",
+                child: ListTile(
+                  leading: Icon(Icons.cloud_off_outlined, size: 36),
+                  title: Text(
+                    "Remover dados da nuvem",
+                  ),
+                ),
+              ),
+            ];
+          },
+        ),
+      ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showAddModal();
@@ -57,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const Text(
                     "Nenhuma lista ainda.\nVamos criar a primeira?",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ],
               ),
@@ -116,5 +166,18 @@ class _HomeScreenState extends State<HomeScreen> {
   void remove(KangooList model) async {
     await _appDatabase.deleteKangooList(int.parse(model.id));
     refresh();
+  }
+
+  saveOnServer() async {
+    await _dioService.saveLocalToServer(_appDatabase);
+  }
+
+  syncWithServer() async {
+    await _dioService.getDataFromServer(_appDatabase);
+    refresh();
+  }
+
+  clearServerData() async {
+    await _dioService.clearServerData();
   }
 }

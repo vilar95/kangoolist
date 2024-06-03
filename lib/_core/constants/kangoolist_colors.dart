@@ -14,7 +14,7 @@ class KangooListColors {
     800: Color(0xFFB9DB47),
     900: Color(0xFFADD535),
   });
-  static const int _greenPrimaryValue = 0xFFCCE63;
+  static const int _greenPrimaryValue = 0xFF009688;
 
   static const MaterialColor greenAccent =
       MaterialColor(_greenAccentValue, <int, Color>{
@@ -23,7 +23,7 @@ class KangooListColors {
     400: Color(0xFFECFFB7),
     700: Color(0xFFE6FF9D),
   });
-  static const int _greenAccentValue = 0xFFF9FFEA;
+  static const int _greenAccentValue = 0xFF009688;
 
   static const MaterialColor purple =
       MaterialColor(_purplePrimaryValue, <int, Color>{
@@ -38,7 +38,7 @@ class KangooListColors {
     800: Color(0xFF4A3789),
     900: Color(0xFF392778),
   });
-  static const int _purplePrimaryValue = 0xFF6750A4;
+  static const int _purplePrimaryValue = 0xFF009688;
 
   static const MaterialColor purpleAccent =
       MaterialColor(_purpleAccentValue, <int, Color>{
@@ -47,7 +47,7 @@ class KangooListColors {
     400: Color(0xFF7755FF),
     700: Color(0xFF633BFF),
   });
-  static const int _purpleAccentValue = 0xFFA088FF;
+  static const int _purpleAccentValue = 0xFF009688;
 
   static const MaterialColor lavandalight =
       MaterialColor(_lavandalightPrimaryValue, <int, Color>{
@@ -62,7 +62,7 @@ class KangooListColors {
     800: Color(0xFFE1CFFF),
     900: Color(0xFFDBC7FF),
   });
-  static const int _lavandalightPrimaryValue = 0xFFEADDFF;
+  static const int _lavandalightPrimaryValue = 0xFF009688;
 
   static const MaterialColor lavandalightAccent =
       MaterialColor(_lavandalightAccentValue, <int, Color>{
@@ -95,5 +95,5 @@ class KangooListColors {
     400: Color(0xFF5200F6),
     700: Color(0xFF4900DC),
   });
-  static const int _graydarkAccentValue = 0xFF7429FF;
+  static const int _graydarkAccentValue = 0xFF009688;
 }

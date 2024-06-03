@@ -10,7 +10,7 @@ class KangooListTheme {
     primarySwatch: Colors.teal,
 
     // Cor de fundo em telas que usam Scaffold
-    scaffoldBackgroundColor: Color.fromARGB(255, 126, 255, 218),
+    scaffoldBackgroundColor: const Color.fromARGB(255, 67, 180, 148),
 
     // Tema dos FloatingActionButton
     floatingActionButtonTheme: const FloatingActionButtonThemeData(

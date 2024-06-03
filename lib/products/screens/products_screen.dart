@@ -26,7 +26,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
 
   bool isGroupedByCategory = false;
 
-  ProductsBoxHandler _productsBoxHandler = ProductsBoxHandler();
+  final ProductsBoxHandler _productsBoxHandler = ProductsBoxHandler();
   @override
   void initState() {
     _productsBoxHandler

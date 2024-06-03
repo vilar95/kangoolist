@@ -11,11 +11,8 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  // TODO: Ao implementar autenticação, remover valores mockados.
-  final TextEditingController _emailController =
-      TextEditingController(text: "eduardo.vilar@kangolist.com.br");
-  final TextEditingController _senhaController =
-      TextEditingController(text: "123321");
+  final TextEditingController _emailController = TextEditingController(text: "");
+  final TextEditingController _senhaController = TextEditingController(text: "");
   final TextEditingController _confirmaController = TextEditingController();
   final TextEditingController _nomeController = TextEditingController();
 
